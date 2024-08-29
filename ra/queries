@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------------------------------
+Student |X| (π(student_id)
+   	Enrol |X| (π(course_id)
+			(o-(section_id=1 && year=2023 && course_name="MOC-2")
+				(Course |X| Section(course_id,section_id))))(student_id))(student_id)
+---------------------------------------------------------------------------------------------------------
+π(faculty_name)
+	o-(section_id=2 && time<12)
+		Class |X| Faculty(faculty_id)
+---------------------------------------------------------------------------------------------------------
+π(faculty_name)
+	(o-(floor_no=1 && building_no=1)
+		Room |X| (π(faculty_name,room_id)
+			o-(section_id=2 && time<12)
+				Class |X| Faculty(faculty_id))(room_id)
+---------------------------------------------------------------------------------------------------------
+Room |X| (π(room_id)
+	o-(faculty_name='AKR' && time<12)
+		Class |X| Faculty(faculty_id))(room_id)
+---------------------------------------------------------------------------------------------------------
+π(details)
+	Department |X| Student(chair_id, advisor_id)
+
+---------------------------------------------------------------------------------------------------------
+o-()
+    Enrol |X| Section(course_id, section_id)
+
+Student |X| (π(student_id) o-(year_grade=F) Enrol)(stud_id ‡ student_id)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+{
+	t|t ∈ students(
+		t2 ∈ enrol(
+			course_id ∈ course(
+					t2.course_id = course.course_id
+					course.course_name = "MOC1"
+					  )
+			  year = 2023
+			  section_id = 1
+			  t.stu_id = t2.stu_id
+			  )
+		    )
+}
